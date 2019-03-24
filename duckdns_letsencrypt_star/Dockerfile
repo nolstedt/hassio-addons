@@ -8,8 +8,8 @@ RUN mkdir -p /dnsapi
 
 ARG ACME_VERSION
 RUN apk add --no-cache curl openssl \
-  && curl -s -o /acme.sh https://raw.githubusercontent.com/Neilpang/acme.sh/$ACME_VERSION/acm
-  && curl -s -o /dnsapi/dns_duckdns.sh https://raw.githubusercontent.com/Neilpang/acme.sh/$AC
+  && curl -s -o /acme.sh https://raw.githubusercontent.com/Neilpang/acme.sh/$ACME_VERSION/acme.sh \
+  && curl -s -o /dnsapi/dns_duckdns.sh https://raw.githubusercontent.com/Neilpang/acme.sh/$ACME_VERSION/dnsapi/dns_duckdns.sh
 
 COPY *.sh /
 RUN chmod a+x /run.sh
