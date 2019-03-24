@@ -3,7 +3,7 @@
   "version": "0.1",
   "slug": "duckdns_letsencrypt_star",
   "description": "Duck DNS, Let's Encrypt, wildcard domain",
-  "url": "https://github.com/nolstedt/hassio-addons/duckdns_letsencrypt_star",
+  "url": "https://github.com/nolstedt/hassio-addons/tree/master/duckdns_letsencrypt_star",
   "startup": "services",
   "boot": "auto",
   "map": ["ssl:rw"],
