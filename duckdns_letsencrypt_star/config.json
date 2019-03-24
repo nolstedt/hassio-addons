@@ -1,0 +1,39 @@
+{
+  "name": "Duck DNS, Let's Encrypt, wildcard domain",
+  "version": "0.1",
+  "slug": "duckdns_letsencrypt_star",
+  "description": "Duck DNS, Let's Encrypt, wildcard domain",
+  "url": "https://github.com/nolstedt/hassio-addons/duckdns_letsencrypt_star",
+  "startup": "services",
+  "boot": "auto",
+  "map": ["ssl:rw"],
+  "options": {
+    "lets_encrypt": {
+      "accept_terms": false,
+      "certfile": "fullchain.pem",
+      "keyfile": "privkey.pem",
+      "domains": [null]
+    },
+    "duck_dns": {
+      "token": null,
+      "domains": [null]
+    },
+    "sleep_time": 300,
+    "dns_txt_sleep": 30
+  },
+  "schema": {
+    "lets_encrypt": {
+      "accept_terms": "bool",
+      "certfile": "str",
+      "keyfile": "str",
+      "domains":["str"]
+    },
+    "duck_dns": {
+      "token": "str",
+      "domains": ["str"]
+    },
+    "sleep_time":"int",
+    "dns_txt_sleep":"int"
+  }
+}
+
