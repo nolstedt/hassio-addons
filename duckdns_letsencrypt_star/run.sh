@@ -31,15 +31,15 @@ function copy_certs() {
 function renew_certs() {
   echo "renew certs"
   if [ "$LE_TERMS" == "true" ]; then
+  
+    local domain_args=()
+    for domain in $LE_DOMAINS; do
+      domain_args+=("-d" "$domain")
+    done
+  
     if [ "$LE_UPDATE" == 0 ]; then
       echo "first issue"
-
-      local domain_args=()
-      for domain in $LE_DOMAINS; do
-        domain_args+=("-d" "$domain")
-      done
-
-      #./acme.sh --force --staging \
+      #./acme.sh --force --staging
       ./acme.sh \
         --dnssleep $DNSTXTSLEEP \
         --issue "${domain_args[@]}" --dns dns_duckdns \
@@ -48,7 +48,7 @@ function renew_certs() {
         --ca-file $WORK_DIR/ca --fullchain-file "$WORK_DIR/fullchain.pem"
 
     else
-      #./acme.sh $ACME_FORCE $ACME_STAGING \
+      #./acme.sh $ACME_FORCE $ACME_STAGING
       ./acme.sh \
         --dnssleep $DNSTXTSLEEP \
         --renew "${domain_args[@]}" \

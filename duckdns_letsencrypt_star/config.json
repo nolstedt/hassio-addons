@@ -1,6 +1,6 @@
 {
   "name": "Duck DNS, Let's Encrypt, wildcard domain",
-  "version": "0.1",
+  "version": "0.2",
   "slug": "duckdns_letsencrypt_star",
   "description": "Duck DNS, Let's Encrypt, wildcard domain",
   "url": "https://github.com/nolstedt/hassio-addons/tree/master/duckdns_letsencrypt_star",
